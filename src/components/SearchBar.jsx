@@ -1,8 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { SearchedMovie } from '../pages/context';
 
+
+  
 
 const SearchBar = () => {
+  const value = useContext(SearchedMovie);
   const [search,setSearch]=useState();
+
+  function handleSearch(){
+    value.setSearchedMovie(search);
+  }
+
   return (
     <div className="mt-[60px] flex justify-center items-center p-4  w-full bg-gray-100">
             <input
@@ -15,6 +24,7 @@ const SearchBar = () => {
             />
             <button
                 className="bg-white text-blue rounded-lg px-4 py-2 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                onClick={handleSearch()}
             >
                 Search
             </button>

@@ -10,8 +10,11 @@ const MovieList = () => {
 
   useEffect(()=>{
     fetchMovies();
-    
   },[])
+
+  useEffect(()=>{
+    FilterMovies();
+  },[searchMovieTitle])
 
   function fetchMovies(){
     const data =[
@@ -37,7 +40,7 @@ const MovieList = () => {
 
 function FilterMovies(){
   if(searchMovieTitle ) {
-    movies = movies.filter(movie => movie.title===searchMovieTitle)
+    setMovies(movies.filter(movie => movie.title===searchMovieTitle));
  }
 }
   

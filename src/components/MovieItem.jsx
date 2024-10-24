@@ -25,3 +25,4 @@ const MovieItem = ({img, title,releasedate,rating}) => {
 
  export default MovieItem
 
+
