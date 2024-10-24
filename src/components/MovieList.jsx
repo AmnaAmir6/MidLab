@@ -12,9 +12,9 @@ const MovieList = () => {
     fetchMovies();
   },[])
 
-  useEffect(()=>{
-    FilterMovies();
-  },[searchMovieTitle])
+  // useEffect(()=>{
+  //   FilterMovies();
+  // },[searchMovieTitle])
 
   function fetchMovies(){
     const data =[

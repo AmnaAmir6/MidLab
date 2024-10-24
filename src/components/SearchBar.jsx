@@ -8,8 +8,9 @@ const SearchBar = () => {
   const value = useContext(SearchedMovie);
   const [search,setSearch]=useState();
 
-  function handleSearch(){
+  function handleSearch(search){
     value.setSearchedMovie(search);
+    console.log(search);
   }
 
   return (
@@ -24,7 +25,7 @@ const SearchBar = () => {
             />
             <button
                 className="bg-white text-blue rounded-lg px-4 py-2 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                onClick={handleSearch()}
+                onClick={handleSearch(search)}
             >
                 Search
             </button>
